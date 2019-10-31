@@ -9,6 +9,27 @@ class Node {
     }
 }
 
-class LinkedList {}
+class LinkedList {
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this._size = 0;
+    }
+    insertFirst(data){
+        this.head = new Node(data,this.head);
+        if(this.head.next == null)
+            this.tail = this.head;
+        this._size += 1;
+    }
+    size(){
+        return this._size;
+    }
+    getFirst(){
+        return this.head;
+    }
+    getLast(){
+        return this.tail;
+    }
+}
 
 module.exports = { Node, LinkedList };
